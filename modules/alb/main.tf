@@ -10,6 +10,7 @@ resource "aws_alb_target_group" "default" {
   health_check {
     path     = "${var.health_check_path}"
     protocol = "HTTP"
+    matcher  = "200,202"
   }
 
   tags {
